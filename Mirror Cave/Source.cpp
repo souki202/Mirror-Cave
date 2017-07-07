@@ -83,6 +83,7 @@ int main() {
 					if (room[1][next.second.y][next.second.x] == WALL) {
 						next.second = node.second;
 					}
+					//探索前ならスタックに追加。両方ゴールのパターンは事前に確認済み。
 					if (!isSearched[next.first.y][next.first.x][next.second.y][next.second.x] && room[0][next.first.y][next.first.x] != GOAL && room[1][next.second.y][next.second.x] != GOAL) {
 						s.push(next);
 						isSearched[next.first.y][next.first.x][next.second.y][next.second.x] = true;
